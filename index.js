@@ -28,7 +28,7 @@ async function updateCache() {
         await page.close();
 
         cache = { count: stats, lastUpdated: Date.now() };
-        console.log("Cache updated:", cache);
+        
     } catch (error) {
         console.error("Error updating cache:", error);
     }
