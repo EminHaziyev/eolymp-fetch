@@ -14,6 +14,9 @@ app.get("/ping", (req, res) => {
 });
 
 app.get("/getstats", async (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*"); 
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
     try {
         if (!browser) {
             return res.status(500).json({ error: "Browser is not ready" });
